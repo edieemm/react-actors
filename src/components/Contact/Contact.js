@@ -33,6 +33,7 @@ class Contact extends Component {
 
     handleClick = () => {
         alert('Thank you, ' + this.state.firstName)
+        document.getElementById("form").reset();
     }
 
 
@@ -41,10 +42,12 @@ class Contact extends Component {
         return (
             <div>
                 <h2>Contact</h2>
-                <input placeholder="First Name" onChange={this.handleFirstName} />
-                <input placeholder="Last Name" onChange={this.handleLastName} />
-                <input placeholder="Best Impression" onChange={this.handleImpression} />
-                <button onClick = {this.handleClick}>Join Us!</button>
+                <form id="form">
+                    <input placeholder="First Name" onChange={this.handleFirstName} />
+                    <input placeholder="Last Name" onChange={this.handleLastName} />
+                    <input placeholder="Best Impression" onChange={this.handleImpression} />
+                    <button onClick={this.handleClick}>Join Us!</button>
+                </form>
                 <p>{this.state.firstName} {this.state.lastName}'s best impression is {this.state.impression}</p>
                 <p>Phone number: 908-765-4321</p>
                 <p>Email: actors@reactactors.com</p>
