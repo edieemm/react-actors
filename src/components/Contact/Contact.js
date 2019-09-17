@@ -31,6 +31,10 @@ class Contact extends Component {
         });
     }
 
+    handleClick = () => {
+        alert('Thank you, ' + this.state.firstName)
+    }
+
 
 
     render() {
@@ -40,7 +44,7 @@ class Contact extends Component {
                 <input placeholder="First Name" onChange={this.handleFirstName} />
                 <input placeholder="Last Name" onChange={this.handleLastName} />
                 <input placeholder="Best Impression" onChange={this.handleImpression} />
-                <button onClick = "handleClick">Join Us!</button>
+                <button onClick = {this.handleClick}>Join Us!</button>
                 <p>{this.state.firstName} {this.state.lastName}'s best impression is {this.state.impression}</p>
                 <p>Phone number: 908-765-4321</p>
                 <p>Email: actors@reactactors.com</p>
